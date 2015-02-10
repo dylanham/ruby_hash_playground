@@ -2,19 +2,50 @@
 
 class LearningHash
   def foo_key(hash)
-    hash[:foo]
+    hash.fetch(:foo,nil)
   end
 
   def bar_key(hash)
-    hash[:bar]
+    hash.fetch(:bar,nil)
   end
 
   def key_stringer(hash)
     string = ''
   hash.each_key do |key|
-   string << key
+   string <<key.to_s
     end
-    string  
+    string
   end
+
+  def value_stringer(hash)
+    string = ''
+    hash.each_value do |value|
+      string <<value.to_s
+    end
+    string
+  end
+
+  def key_and_value_stringer(hash)
+    string =''
+    hash.each_pair do |key,value|
+      string <<key.to_s + value.to_s
+    end
+    string
+  end
+  def reversed_key_and_value_stringer(hash)
+    string =''
+    hash.each_pair do |key,value|
+      string <<key.to_s + value.to_s
+    end
+    string.reverse
+  end
+  def polite_is_empty?(hash)
+    if hash.empty?
+      "Yes ma'am"
+    else
+      "No ma'am"
+    end
+  end
+
 
 end
