@@ -32,6 +32,7 @@ class LearningHash
     end
     string
   end
+  
   def reversed_key_and_value_stringer(hash)
     string =''
     hash.each_pair do |key,value|
@@ -39,6 +40,7 @@ class LearningHash
     end
     string.reverse
   end
+
   def polite_is_empty?(hash)
     if hash.empty?
       "Yes ma'am"
@@ -46,6 +48,5 @@ class LearningHash
       "No ma'am"
     end
   end
-
 
 end
